@@ -1,0 +1,10 @@
+.divMae{
+    flex: 1;
+    align-items: 'center';
+}
+
+.bloco{
+    width: '100px';
+    height: '100px';
+    background-color: blueviolet;
+}
