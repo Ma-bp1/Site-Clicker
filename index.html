@@ -8,13 +8,77 @@
 </head>
 <body>
     <div id="divMae">
-        <p>cliques: <span class="numeroCliques">0</span> </p>
-        <img src="https://png.pngtree.com/png-vector/20250919/ourmid/pngtree-beautiful-ragdoll-cat-with-striking-blue-eyes-sitting-elegantly-isolated-on-png-image_17502891.webp"
-         id="bloco" onclick='incrementarCliques()'
-        > 
-        </img>
-    </div>
+        <header class="banner">
+            <p>Gato Clicker</p>
+            <nav class="linksBanner">
+                <a href="index.html">Jogo</a>
+                <a href="sobre.html">Sobre</a>
+            </nav>
+        </header>
 
+        <div id="container">
+            <div>
+                <p class="titulos">Nome: <span class="numeroCliques"> </span> </p>
+                <p class="titulos">cliques: <span class="numeroCliques">0</span> </p>
+                <img src="https://png.pngtree.com/png-vector/20250919/ourmid/pngtree-beautiful-ragdoll-cat-with-striking-blue-eyes-sitting-elegantly-isolated-on-png-image_17502891.webp"
+                id="bloco" onclick='incrementarCliques()'
+> 
+                </img>   
+            </div>
+            
+            <div id="upgrades">
+                <div id="tituloUpgrades" class="titulos">
+                    <p>Upgrades</p>
+                    <p>Custo</p>
+                </div>
+                
+                <script type="module">
+                    import {upgrades} from './script.js';
+
+                    const container = document.getElementById('upgrades');
+
+                    window.fecharModal = function() {
+                        document.getElementById('meuModal').classList.remove('mostrar');
+                    }
+
+                    upgrades.forEach(card =>{
+                        const cardUpgrade =`
+                            <div class= "cardU">
+                                <div class="cardUpgrades">
+                                    <p>${card.title}</p>
+                                    <p>${card.custo}</p>
+                                </div>
+                                <button class="botao" data-desc="${card.description}">
+                                    Sobre
+                                </button>
+                            </div>
+                        `;
+
+                        container.innerHTML += cardUpgrade;
+                    });
+
+                    container.addEventListener('click', (evento) => {
+                        if (evento.target.classList.contains('btn-upgrade')) {
+                            const descricao = evento.target.getAttribute('data-desc');
+                            const modal = document.getElementById('meuModal');
+                            const corpo = document.getElementById('modalCorpo');
+
+                            corpo.innerText = descricao || "Sem descrição disponível";
+                            modal.classList.add('mostrar');
+                        }
+                    });
+                </script>
+            </div>
+        </div>
+       
+    </div>
+    <div id="modal" class="modalFundo">
+        <div class="modalConteudo">
+            <h3 id="modalTitulo">Upgrade</h3>
+            <p id="modalCorpo"></p>
+            <button onclick="fecharModal()" class="botao-fechar">Entendi!</button>
+        </div>
+    </div>
     <script src="script.js"> </script>
 </body>
 </html>

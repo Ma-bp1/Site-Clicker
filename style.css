@@ -4,8 +4,107 @@
     justify-content: center;
 }
 
-#bloco{
-    width: 100px;
-    height: 100px;
-    background-color: blueviolet;
+.banner{
+    background-color: #1B004B;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5%;
+    padding-left: 3%;
+    padding-right: 3%;
+    color: white;
+    font-size: 130%;
+}
+
+.linksBanner{
+    color: white;
+}
+
+#container{
+    display: flex;
+    flex-direction: row;
+    margin: 1%;
+    gap: 50px;
+    justify-content: center;
+}
+
+.titulos{
+    font-weight: bold;
+    font-size: 150%;
+    color: #2b064d;
+}
+
+#numeroCliques{
+    font-weight: bold;
+    font-size: 150%;
+}
+
+.botao{
+    align-items: center;
+    background-color: #b57edc;
+    color: #2b064d;
+    margin: auto;
+    padding: 2%;
+}
+
+#upgrades{
+   margin-left: 30%;
+   align-items: center;
+   justify-content: center;
+}
+
+#tituloUpgrades{
+    color: #2b064d;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
+}
+
+.cardU{
+    background-color: #fff0ff;
+    padding: 3%;
+    margin-bottom: 5%;
+    border-radius: 20%;
+    display: flex;
+    font-size: 10;
+    display: flex;
+    flex-direction: column;
+    margin-left: 50;
+}
+.cardUpgrades{
+    display: flex;
+    flex-direction: row;
+    font-size: 10;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#modal{
+    color: black;
+}
+ 
+.modalFundo{
+    position: fixed;
+    display: none;
+}
+.modalConteudo{
+    color: black;
+}
+
+#modalTitulo{
+    color: black;
+}
+
+#modalCorpo{
+    color: black;
+}
+
+.mostrar {
+    display: flex !important; /* Quando essa classe entra, o modal aparece! */
+    justify-content: center;
+    align-items: center;
 }
