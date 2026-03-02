@@ -26,7 +26,7 @@
         <div id="containerMae">
             <div id="gatoInformacoes">
                 <p class="titulos">Nome: <span id="nomeGato"> Dorivaldo </span> </p>
-                <p class="titulos">cliques: <span id="numeroClick">0</span> </p>
+                <p class="titulos">cliques: <span id="labelClique">0</span> </p>
 
                 <!--#gato possui eventListener no javascript-->
                 <img src="./assets/imagens/Gato1.png" alt="imagem de um gato" id="gato">
@@ -43,10 +43,6 @@
                     import {upgrades} from './script.js';
 
                     const container = document.getElementById('upgrades');
-
-                    window.fecharModal = function() {
-                        document.getElementById('meuModal').classList.remove('mostrar');
-                    }
 
                     upgrades.forEach(card =>{
                         const cardUpgrade =`

@@ -1,16 +1,34 @@
-let contarCliques = document.getElementById('numeroClick')
+let contarCliques = document.getElementById('labelClique')
 
-export function contarCliques() {
-    const miau = new Audio("dragon-studio-cat-meow-401729.mp3")
-    contarCliques.innerHTML = parseFloat(contarCliques.innerHTML) + 1
-    miau.play()
+export function displayCliques() {
+    contarCliques.innerHTML = parseFloat(contarCliques.innerHTML) + 1 
 }
 
-document.getElementById('gato').addEventListener('click', incrementarCliques);
+document.getElementById('gato').addEventListener('click', contarCliques)
+
+function comprarUpgrade(indice){
+    let podeComprar = false;
+    
+
+    if (document.getElementById('labelClique').innerHTML >= {upgrades.custo}) {
+        podeComprar = true;
+    }
+    else podeComprar() = false;
+}
+
+document.querySelector('.cardContainer').addEventListener('click', comprarUpgrade())
+
+//upgrades e suas funcionalidades abaixo:
+function upgradeRatinhos() {
+    setInterval(()=>{
+        displayCliques();
+    }, 100);
+}
+
 
 export const upgrades = [
     {
-        titulo:"Ratinhos trabalhadores",
+        titulo:"Ratinhos Trabalhadores",
         custo:"10",
         description:"Terá ratos para trabalhar pra você (autoclicker)",
     },
@@ -22,7 +40,7 @@ export const upgrades = [
     },
 
     {
-        titulo:"Dar ao nome do seu gato",
+        titulo:"Dar nome ao seu gato",
         custo:"100",
         description:"Você pode nomear seu bichano",
     },
@@ -33,4 +51,3 @@ export const upgrades = [
         description:"Seu pet comecou a gostar de você, ele irá ronronar quando você der carinho",
     }
 ]
-
