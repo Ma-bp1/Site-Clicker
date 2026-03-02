@@ -1,4 +1,10 @@
 let totalCliques = 0;
+var totalUpgrades = 0;
+
+export function contarUpgrades() {
+    totalUpgrades += 1;
+    displayUpgrades();
+}
 
 export function contarCliques() {
     totalCliques += 1;
@@ -24,6 +30,10 @@ function displayCliques(){
         }
     }
 });
+}
+
+function displayUpgrades(){
+    const labelUpdateUpgrades = document.getElementById('')
 }
 
 
@@ -72,7 +82,7 @@ export const upgrades = [
     {
         titulo:"Ratinhos Trabalhadores",
         custo:"10",
-        descricao:"Terá ratos para trabalhar pra você (autoclicker)",
+        descricao:"Terá ratos para trabalhar pra você (autoclicker 1 clique por segundo cada ratinho)",
         acao: upgradeRatinhos
     },
 
