@@ -1,10 +1,71 @@
-let contarCliques = document.getElementById('labelClique')
+let totalCliques = 0;
 
-export function displayCliques() {
-    contarCliques.innerHTML = parseFloat(contarCliques.innerHTML) + 1 
+export function contarCliques() {
+    totalCliques += 1;
+    displayCliques(); 
 }
 
-document.getElementById('gato').addEventListener('click', displayCliques)
+function displayCliques(){
+    const labelClique = document.getElementById('labelClique');
+    labelClique.innerHTML = Math.floor(totalCliques);
+
+    const upgradeCards = document.querySelectorAll('.cardContainer');
+
+    upgrades.forEach((upgrade, indice)=>{
+    const upgradeCardsHtml = upgradeCards[indice];
+    
+    if (upgradeCardsHtml) {
+        if (totalCliques >= parseFloat(upgrade.custo)) {
+            upgradeCardsHtml.classList.remove('upgradeIndisponivel');
+            upgradeCardsHtml.classList.add ('upgradeDisponivel');
+        } else {
+            upgradeCardsHtml.classList.remove('upgradeDisponivel');
+            upgradeCardsHtml.classList.add('upgradeIndisponivel');
+        }
+    }
+});
+}
+
+
+
+document.getElementById('gato').addEventListener('click', contarCliques);
+
+window.comprarUpgrade = function(indice){
+    const upgrade = upgrades[indice];
+    const custo = parseFloat(upgrade.custo);
+    
+    if (totalCliques >= custo) {
+        totalCliques -= custo;
+
+        upgrade.acao();
+        displayCliques();
+    }
+    else {
+        alert("Cliques insuficientes! Clique um pouco mais :3")
+    }
+}
+
+//upgrades e suas funcionalidades abaixo:
+function upgradeRatinhos() {
+    var tempoAlteravel = 1000;
+
+    setInterval(()=>{
+        totalCliques += 1;
+        displayCliques();
+    }, tempoAlteravel);
+}
+
+function upgradeLeite() {
+    totalCliques * 2;
+}
+
+function upgradeNomeGato() {
+    console.log('teste')
+}
+
+function upgradeRonronar() {
+    console.log('teste')
+}
 
 export const upgrades = [
     {
@@ -36,39 +97,5 @@ export const upgrades = [
     }
 ]
 
-function comprarUpgrade(indice){
-    const upgrade = upgrades[indice];
-    const custo = parseFloat(upgrade.custo);
-    
-    if (document.getElementById('labelClique').innerHTML >= custo) {
-        document.getElementById('labelClique').innerHTML -= custo;
 
-        upgrade.acao();
-    }
-    else {
-        alert("Cliques insuficientes! Clique um pouco mais :3")
-    }
-}
-
-//upgrades e suas funcionalidades abaixo:
-function upgradeRatinhos() {
-    var tempoAlteravel = 1000;
-
-    setInterval(()=>{
-        displayCliques();
-    }, tempoAlteravel);
-}
-
-function upgradeLeite() {
-    console.log('teste')
-}
-
-function upgradeNomeGato() {
-    console.log('teste')
-}
-
-function upgradeRonronar() {
-    console.log('teste')
-}
-
-
+displayCliques();

@@ -108,6 +108,15 @@
     padding: 10px;
     cursor: pointer;
 }
+
+.upgradeDisponivel {
+    background-color: #fff0ff;
+}
+
+.upgradeIndisponivel {
+    background-color: #a27fca;
+}
+
 .cardUpgrades{
     display: flex;
     flex-direction: row;
