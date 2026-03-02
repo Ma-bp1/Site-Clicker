@@ -5,9 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href="style.css">
     <title>Document</title>
+
+    <!--Jost Font, de Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <div id="divMae">
+        
         <header class="banner">
             <p>Gato Clicker</p>
             <nav class="linksBanner">
@@ -18,8 +25,8 @@
 
         <div id="container">
             <div>
-                <p class="titulos">Nome: <span class="numeroCliques"> </span> </p>
-                <p class="titulos">cliques: <span class="numeroCliques">0</span> </p>
+                <p class="titulos">Nome: <span id="nomeGato"> Dorivaldo </span> </p>
+                <p class="titulos">cliques: <span id="quantidadeCliques">0</span> </p>
                 <img src="https://png.pngtree.com/png-vector/20250919/ourmid/pngtree-beautiful-ragdoll-cat-with-striking-blue-eyes-sitting-elegantly-isolated-on-png-image_17502891.webp"
                 id="bloco" onclick='incrementarCliques()'
 > 
@@ -43,9 +50,9 @@
 
                     upgrades.forEach(card =>{
                         const cardUpgrade =`
-                            <div class= "cardU">
+                            <div class= "cardContainer">
                                 <div class="cardUpgrades">
-                                    <p>${card.title}</p>
+                                    <p>${card.titulo}</p>
                                     <p>${card.custo}</p>
                                 </div>
                                 <button class="botao" data-desc="${card.description}">
@@ -55,17 +62,6 @@
                         `;
 
                         container.innerHTML += cardUpgrade;
-                    });
-
-                    container.addEventListener('click', (evento) => {
-                        if (evento.target.classList.contains('btn-upgrade')) {
-                            const descricao = evento.target.getAttribute('data-desc');
-                            const modal = document.getElementById('meuModal');
-                            const corpo = document.getElementById('modalCorpo');
-
-                            corpo.innerText = descricao || "Sem descrição disponível";
-                            modal.classList.add('mostrar');
-                        }
                     });
                 </script>
             </div>
@@ -79,6 +75,6 @@
             <button onclick="fecharModal()" class="botao-fechar">Entendi!</button>
         </div>
     </div>
-    <script src="script.js"> </script>
+    <script type='module' src="script.js"> </script>
 </body>
 </html>

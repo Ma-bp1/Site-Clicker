@@ -1,31 +1,36 @@
-let quantidadeCliques = document.querySelector('.numeroCliques')
+let quantidadeCliques = document.getElementById('.numeroCliques')
 
-function incrementarCliques() {
+export function incrementarCliques() {
     const miau = new Audio("dragon-studio-cat-meow-401729.mp3")
     quantidadeCliques.innerHTML = parseFloat(quantidadeCliques.innerHTML) + 1
     miau.play()
 }
 
+//document.getElementById('bloco').addEventListener('click', incrementarCliques);
+
 export const upgrades = [
     {
-        title:"Ratinhos trabalhadores",
+        titulo:"Ratinhos trabalhadores",
         custo:"10",
         description:"Terá ratos para trabalhar pra você (autoclicker)",
     },
 
     {
-        title:"Leite",
+        titulo:"Leite",
         custo:"20",
-        description:"",
+        description:"Faz o gato ficar feliz (multiplica 2x o autoclicker)",
     },
 
     {
-        title:"Dar ao nome do seu gato",
+        titulo:"Dar ao nome do seu gato",
         custo:"100",
         description:"Você pode nomear seu bichano",
     },
 
     {
-        title:"Ronronar",
+        titulo:"Ronronar",
         custo:"150",
         description:"Seu pet comecou a gostar de você, ele irá ronronar quando você der carinho",
+    }
+]
+

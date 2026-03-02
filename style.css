@@ -1,11 +1,21 @@
+/*Jost Google Font como adicionar:*/
+.jostFont {
+  font-family: "Jost", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+
 #divMae{
-    flex: 1;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
+    padding: 1%;
 }
 
 .banner{
-    background-color: #1B004B;
+    background-color: #8257B3;
     margin: 0;
     display: flex;
     justify-content: space-between;
@@ -15,6 +25,10 @@
     padding-right: 3%;
     color: white;
     font-size: 130%;
+    font-family: "Jost", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
 }
 
 .linksBanner{
@@ -27,12 +41,18 @@
     margin: 1%;
     gap: 50px;
     justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
 }
 
 .titulos{
     font-weight: bold;
     font-size: 150%;
     color: #2b064d;
+    font-family: "Jost", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
 }
 
 #numeroCliques{
@@ -40,18 +60,15 @@
     font-size: 150%;
 }
 
-.botao{
-    align-items: center;
-    background-color: #b57edc;
-    color: #2b064d;
-    margin: auto;
-    padding: 2%;
-}
 
 #upgrades{
-   margin-left: 30%;
-   align-items: center;
-   justify-content: center;
+    margin-left: 30%;
+    align-items: center;
+    justify-content: center;
+    font-family: "Jost", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
 }
 
 #tituloUpgrades{
@@ -61,18 +78,17 @@
     align-items: center;
     justify-content: center;
     justify-content: space-between;
+    width: 200px;
 }
 
-.cardU{
+.cardContainer{
     background-color: #fff0ff;
-    padding: 3%;
-    margin-bottom: 5%;
-    border-radius: 20%;
-    display: flex;
-    font-size: 10;
-    display: flex;
-    flex-direction: column;
-    margin-left: 50;
+    margin-bottom: 5px;
+    border-radius: 8px;
+    border-color: #2b064d;
+    border-width: 4px;
+    border-style: solid;
+    padding: 10px; 
 }
 .cardUpgrades{
     display: flex;
@@ -81,6 +97,21 @@
     justify-content: space-between;
     margin-left: auto;
     margin-right: auto;
+}
+
+.botao{
+    background-color: #8257B3;
+    color: white;
+    border-radius: 8px;
+    border-width: 0;
+    padding: 10px;
+    text-align: center;
+    font-family: "Jost", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 14px;
+    cursor: pointer;
 }
 
 #modal{
