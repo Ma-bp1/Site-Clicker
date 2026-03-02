@@ -1,12 +1,12 @@
-let quantidadeCliques = document.getElementById('.numeroCliques')
+let contarCliques = document.getElementById('numeroClick')
 
-export function incrementarCliques() {
+export function contarCliques() {
     const miau = new Audio("dragon-studio-cat-meow-401729.mp3")
-    quantidadeCliques.innerHTML = parseFloat(quantidadeCliques.innerHTML) + 1
+    contarCliques.innerHTML = parseFloat(contarCliques.innerHTML) + 1
     miau.play()
 }
 
-//document.getElementById('bloco').addEventListener('click', incrementarCliques);
+document.getElementById('gato').addEventListener('click', incrementarCliques);
 
 export const upgrades = [
     {

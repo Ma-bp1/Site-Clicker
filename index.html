@@ -18,18 +18,18 @@
         <header class="banner">
             <p>Gato Clicker</p>
             <nav class="linksBanner">
-                <a href="index.html">Jogo</a>
-                <a href="sobre.html">Sobre</a>
+                <a class="linksBanner" href="index.html">Jogo</a>
+                <a class="linksBanner" href="sobre.html">Sobre</a>
             </nav>
         </header>
 
-        <div id="container">
-            <div>
+        <div id="containerMae">
+            <div id="gatoInformacoes">
                 <p class="titulos">Nome: <span id="nomeGato"> Dorivaldo </span> </p>
-                <p class="titulos">cliques: <span id="quantidadeCliques">0</span> </p>
-                <img src="https://png.pngtree.com/png-vector/20250919/ourmid/pngtree-beautiful-ragdoll-cat-with-striking-blue-eyes-sitting-elegantly-isolated-on-png-image_17502891.webp"
-                id="bloco" onclick='incrementarCliques()'
-> 
+                <p class="titulos">cliques: <span id="numeroClick">0</span> </p>
+
+                <!--#gato possui eventListener no javascript-->
+                <img src="./assets/imagens/Gato1.png" alt="imagem de um gato" id="gato">
                 </img>   
             </div>
             
@@ -65,16 +65,9 @@
                     });
                 </script>
             </div>
-        </div>
-       
+        </div>  
     </div>
-    <div id="modal" class="modalFundo">
-        <div class="modalConteudo">
-            <h3 id="modalTitulo">Upgrade</h3>
-            <p id="modalCorpo"></p>
-            <button onclick="fecharModal()" class="botao-fechar">Entendi!</button>
-        </div>
-    </div>
+
     <script type='module' src="script.js"> </script>
 </body>
 </html>
