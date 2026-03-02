@@ -44,14 +44,14 @@
 
                     const container = document.getElementById('upgrades');
 
-                    upgrades.forEach(card =>{
+                    upgrades.forEach(card, indice =>{
                         const cardUpgrade =`
-                            <div class= "cardContainer">
+                            <div class= "cardContainer" onclick="comprarUpgrade(${indice})">
                                 <div class="cardUpgrades">
                                     <p>${card.titulo}</p>
                                     <p>${card.custo}</p>
                                 </div>
-                                <button class="botao" data-desc="${card.description}">
+                                <button class="botao" data-desc="${card.descricao}">
                                     Sobre
                                 </button>
                             </div>
@@ -60,10 +60,11 @@
                         container.innerHTML += cardUpgrade;
                     });
                 </script>
+
             </div>
         </div>  
     </div>
 
-    <script type='module' src="script.js"> </script>
+    <script type="module" src="script.js"> </script>
 </body>
 </html>
