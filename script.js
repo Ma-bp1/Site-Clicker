@@ -2,7 +2,7 @@ let totalCliques = 0;
 var totalUpgrades = 0;
 
 export function contarUpgrades() {
-    totalUpgrades += 1;
+    totalUpgrades = upgrades.quantidade;
     displayUpgrades();
 }
 
@@ -33,9 +33,9 @@ function displayCliques(){
 }
 
 function displayUpgrades(){
-    const labelUpdateUpgrades = document.getElementById('')
+    const labelUpdateUpgrades = document.getElementById('quantidadeUpgradesLabel')
+    labelUpdateUpgrades.innerHTML = Math.floor(totalUpgrades);
 }
-
 
 
 
@@ -48,8 +48,11 @@ window.comprarUpgrade = function(indice){
     if (totalCliques >= custo) {
         totalCliques -= custo;
 
+        upgrade.quantidade += 1;
+
         upgrade.acao();
         displayCliques();
+        
     }
     else {
         alert("Cliques insuficientes! Clique um pouco mais :3")
@@ -67,7 +70,7 @@ function upgradeRatinhos() {
 }
 
 function upgradeLeite() {
-    totalCliques * 2;
+    console.log('teste')
 }
 
 function upgradeNomeGato() {
@@ -83,28 +86,32 @@ export const upgrades = [
         titulo:"Ratinhos Trabalhadores",
         custo:"10",
         descricao:"Terá ratos para trabalhar pra você (autoclicker 1 clique por segundo cada ratinho)",
-        acao: upgradeRatinhos
+        acao: upgradeRatinhos,
+        quantidade: 0
     },
 
     {
         titulo:"Leite",
         custo:"20",
         descricao:"Faz o gato ficar feliz (multiplica 2x o autoclicker)",
-        acao: upgradeLeite
+        acao: upgradeLeite,
+        quantidade: 0
     },
 
     {
         titulo:"Dar nome ao seu gato",
         custo:"100",
         descricao:"Você pode nomear seu bichano",
-        acao: upgradeNomeGato
+        acao: upgradeNomeGato,
+        quantidade: 0,
     },
 
     {
         titulo:"Ronronar",
         custo:"150",
         descricao:"Seu pet comecou a gostar de você, ele irá ronronar quando você der carinho",
-        acao: upgradeRonronar
+        acao: upgradeRonronar,
+        quantidade: 0,
     }
 ]
 
