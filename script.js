@@ -28,6 +28,7 @@ function displayCliques(){
 
 
 
+
 document.getElementById('gato').addEventListener('click', contarCliques);
 
 window.comprarUpgrade = function(indice){

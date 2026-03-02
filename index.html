@@ -44,14 +44,14 @@
 
                     const container = document.getElementById('upgrades');
 
-                    upgrades.forEach((card, indice) =>{
+                    upgrades.forEach((card, indice, descricao) =>{
                         const cardUpgrade =`
                             <div class= "cardContainer" onclick="comprarUpgrade(${indice})">
                                 <div class="cardUpgrades">
                                     <p>${card.titulo}</p>
                                     <p>${card.custo}</p>
                                 </div>
-                                <button class="botao" data-desc="${card.descricao}">
+                                <button class="botao" data-desc="${card.descricao}" onclick='event.stopPropagation(); mostrarDesc(${indice})'>
                                     Sobre
                                 </button>
                             </div>
@@ -59,6 +59,11 @@
 
                         container.innerHTML += cardUpgrade;
                     });
+
+                    window.mostrarDesc = function(indice) {
+                        const upgrade = upgrades[indice];
+                        alert(upgrade.descricao);  
+                    };
                 </script>
 
             </div>
