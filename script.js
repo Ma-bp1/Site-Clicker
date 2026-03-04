@@ -130,5 +130,9 @@ export const upgrades = [
 ]
 
 
+<<<<<<< Updated upstream
+displayCliques();
+>>>>>>> Stashed changes
+=======
 displayCliques();
 >>>>>>> Stashed changes
